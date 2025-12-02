@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>🎮 GameStore - Магазин игр</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка с логотипом -->
+        <header class="header">
+            <h1 class="title">🎮 GameStore</h1>
+            <p class="subtitle">Магазин видеоигр и аксессуаров</p>
+            <div class="balance">
+                <span>Баланс: <strong id="balance">1,000</strong> руб.</span>
+                <button class="btn-small" onclick="addFunds()">+ Пополнить</button>
+            </div>
+        </header>
+
+        <!-- Категории товаров -->
+        <section class="categories">
+            <h2>🔥 Популярные категории</h2>
+            <div class="category-grid">
+                <div class="category-item" onclick="showCategory('pc')">
+                    <div class="category-icon">🖥️</div>
+                    <span>PC игры</span>
+                </div>
+                <div class="category-item" onclick="showCategory('console')">
+                    <div class="category-icon">🎮</div>
+                    <span>Консоли</span>
+                </div>
+                <div class="category-item" onclick="showCategory('accessories')">
+                    <div class="category-icon">🎧</div>
+                    <span>Аксессуары</span>
+                </div>
+                <div class="category-item" onclick="showCategory('keys')">
+                    <div class="category-icon">🔑</div>
+                    <span>Ключи</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Горячие предложения -->
+        <section class="hot-offers">
+            <h2>🔥 Горячие предложения</h2>
+            <div class="products-grid" id="hotProducts">
+                <!-- Продукты загружаются через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Корзина -->
+        <section class="cart-section">
+            <h2>🛒 Ваша корзина</h2>
+            <div class="cart" id="cart">
+                <div class="empty-cart" id="emptyCart">
+                    <p>Корзина пуста</p>
+                    <small>Добавьте товары из каталога</small>
+                </div>
+                <!-- Товары в корзине добавляются через JS -->
+            </div>
+            <div class="cart-total" id="cartTotal" style="display: none;">
+                <p>Итого: <span id="totalAmount">0</span> руб.</p>
+                <button class="btn-buy" onclick="checkout()">💳 Оформить заказ</button>
+            </div>
+        </section>
+
+        <!-- Информация о магазине -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#" onclick="showAbout()">О магазине</a>
+                <a href="#" onclick="showContacts()">Контакты</a>
+                <a href="#" onclick="showSupport()">Поддержка</a>
+            </div>
+            <p class="footer-text">© 2024 GameStore. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно товара -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- Контент загружается через JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем Telegram Web App -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
